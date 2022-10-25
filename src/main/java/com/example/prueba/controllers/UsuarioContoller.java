@@ -24,6 +24,12 @@ public class UsuarioContoller {
         return this.usuarioService.guardarUsuario(usuarioModel);
     }
 
+    @PutMapping(path = "/{id}")
+    public UsuarioModel editarUsuario(@RequestBody UsuarioModel usuarioModel,@PathVariable Long id ){
+        return this.usuarioService.editarUsuario(usuarioModel, id);
+        
+    }
+
     @GetMapping(path = "/{id}")
     public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id){
         return this.usuarioService.obtenerPorId(id);

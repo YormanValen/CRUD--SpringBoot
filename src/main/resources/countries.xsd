@@ -26,6 +26,15 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="prioridad" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:simpleType name="currency">
         <xs:restriction base="xs:string">
             <xs:enumeration value="GBP"/>

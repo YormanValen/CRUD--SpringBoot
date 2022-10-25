@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -37,5 +38,18 @@ public class UsuarioService {
             return false;
         }
 
+    }
+
+    public UsuarioModel editarUsuario(UsuarioModel usuarioModel ,Long id) {
+
+        return usuarioRepository.findById(id)
+        .map(
+            UsuarioModel -> {
+                UsuarioModel.setName(usuarioModel.getName());
+                UsuarioModel.setEmail(usuarioModel.getEmail());
+                UsuarioModel.setPrioridad(usuarioModel.getPrioridad());
+                return usuarioRepository.save(UsuarioModel);
+            }
+        ).get();
     }
 }
