@@ -3,6 +3,7 @@ package com.example.prueba.services;
 import com.example.prueba.models.UsuarioModel;
 import com.example.prueba.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
